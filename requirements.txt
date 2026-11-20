@@ -1,0 +1,2 @@
+# The agent's own list lives in workorder_agent/ because `adk deploy` reads it from the agent folder.
+-r workorder_agent/requirements.txt

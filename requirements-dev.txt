@@ -1,0 +1,2 @@
+# The tool tests need only pytest: no Google Cloud, no model.
+pytest>=8

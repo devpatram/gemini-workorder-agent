@@ -1,0 +1,51 @@
+order_id,asset,component,date,type,description,labor_hours,cost_usd
+WO4101,Crimper 1,hydraulic hose,2025-11-11,breakdown,"Hydraulic fitting leaking, replaced hose",4,520
+WO4102,Capstan A,drive belt,2025-11-17,breakdown,"Belt slipping, retensioned belt",4,520
+WO4103,Crimper 1,hydraulic hose,2025-11-17,breakdown,"Hydraulic fitting leaking, replaced hose",3,195
+WO4104,Extruder 1,thermocouple,2025-11-25,planned,"Zone 5 thermocouple reading erratic, replaced probe",1,110
+WO4105,Extruder 2,drive motor,2025-12-01,breakdown,"Drive tripped on overload, reset and checked amps",1,605
+WO4106,Cooling Pump P3,motor,2025-12-03,breakdown,"Motor running hot, cleaned fan and checked load",1,185
+WO4107,Capstan A,encoder,2025-12-04,breakdown,"Speed reading jumping, replaced encoder cable",1.5,142.5
+WO4108,Crimper 1,crimper pins,2025-12-07,breakdown,"Crimper pins sheared, replaced pins",3,195
+WO4109,Cooling Pump P3,mechanical seal,2025-12-08,breakdown,"Pump seal leaking, replaced mechanical seal",0.5,572.5
+WO4110,Cooling Pump P3,mechanical seal,2025-12-10,breakdown,"Pump seal leaking, replaced mechanical seal",2,130
+WO4111,Take-up 2,traverse,2025-12-13,breakdown,"Traverse not reversing at end, adjusted limit switch",1.5,97.5
+WO4112,Capstan A,encoder,2025-12-13,planned,"Speed reading jumping, replaced encoder cable",3,455
+WO4113,Extruder 2,heater band,2025-12-16,breakdown,"Zone 3 not heating up, replaced heater band",1.5,142.5
+WO4114,Extruder 2,heater band,2025-12-18,planned,"Zone 6 not heating up, replaced heater band",6,650
+WO4115,Crimper 1,hydraulic hose,2025-12-19,breakdown,"Hydraulic fitting leaking, replaced hose",4,305
+WO4116,Cooling Pump P3,mechanical seal,2025-12-26,breakdown,"Pump seal leaking, replaced mechanical seal",0.5,32.5
+WO4117,Cooling Pump P3,mechanical seal,2026-01-04,breakdown,"Pump seal leaking, replaced mechanical seal",2,390
+WO4118,Capstan A,brake pad,2026-01-05,breakdown,"Capstan brake pad worn, replaced pads",1.5,142.5
+WO4119,Extruder 2,drive motor,2026-01-07,planned,"Drive tripped on overload, reset and checked amps",0.5,572.5
+WO4120,Capstan A,encoder,2026-01-08,breakdown,"Speed reading jumping, replaced encoder cable",4,520
+WO4121,Extruder 2,drive motor,2026-01-13,breakdown,"Drive tripped on overload, reset and checked amps",0.5,572.5
+WO4122,Capstan A,brake pad,2026-01-30,breakdown,"Capstan brake pad worn, replaced pads",0.5,152.5
+WO4123,Extruder 2,drive motor,2026-02-09,breakdown,"Drive tripped on overload, reset and checked amps",3,315
+WO4124,Capstan A,drive belt,2026-02-09,breakdown,"Belt slipping, retensioned belt",0.5,292.5
+WO4125,Take-up 2,bearing,2026-02-11,breakdown,"Noisy bearing on reel arbor, replaced bearing",4,520
+WO4126,Cooling Pump P3,mechanical seal,2026-02-16,breakdown,"Pump seal leaking, replaced mechanical seal",0.5,292.5
+WO4127,Crimper 1,hydraulic hose,2026-02-20,planned,"Hydraulic fitting leaking, replaced hose",2,130
+WO4128,Capstan A,drive belt,2026-02-27,breakdown,"Belt slipping, retensioned belt",6,930
+WO4129,Take-up 2,bearing,2026-03-20,breakdown,"Noisy bearing on reel arbor, replaced bearing",0.5,32.5
+WO4130,Extruder 1,thermocouple,2026-03-24,breakdown,"Zone 1 thermocouple reading erratic, replaced probe",6,930
+WO4131,Crimper 1,hydraulic hose,2026-03-25,breakdown,"Hydraulic fitting leaking, replaced hose",0.5,152.5
+WO4132,Cooling Pump P3,motor,2026-03-27,planned,"Motor running hot, cleaned fan and checked load",1,65
+WO4133,Cooling Pump P3,mechanical seal,2026-03-30,breakdown,"Pump seal leaking, replaced mechanical seal",1,325
+WO4134,Take-up 2,traverse,2026-04-02,breakdown,"Traverse not reversing at end, adjusted limit switch",1,65
+WO4135,Capstan A,drive belt,2026-04-21,planned,"Belt slipping, retensioned belt",1,65
+WO4136,Extruder 1,heater band,2026-05-04,planned,"Zone 4 heater band burned out, replaced",2,130
+WO4137,Cooling Pump P3,motor,2026-05-09,breakdown,"Motor running hot, cleaned fan and checked load",0.5,292.5
+WO4138,Take-up 2,traverse,2026-05-25,breakdown,"Traverse not reversing at end, adjusted limit switch",0.5,572.5
+WO4139,Cooling Pump P3,mechanical seal,2026-05-28,planned,"Pump seal leaking, replaced mechanical seal",6,510
+WO4140,Crimper 1,hydraulic hose,2026-06-01,breakdown,"Hydraulic fitting leaking, replaced hose",1,185
+WO4141,Extruder 1,thermocouple,2026-07-05,planned,"Zone 6 thermocouple reading erratic, replaced probe",0.5,572.5
+WO4142,Extruder 1,heater band,2026-07-09,planned,"Zone 1 heater band burned out, replaced",6,650
+WO4143,Take-up 2,bearing,2026-07-15,breakdown,"Noisy bearing on reel arbor, replaced bearing",1,65
+WO4144,Extruder 1,screw/barrel,2026-08-16,breakdown,"Output dropping, screw worn, scheduled rebuild",1.5,357.5
+WO4145,Extruder 2,rotary union,2026-08-26,planned,"Rotary union leaking water, replaced seal kit",3,240
+WO4146,Crimper 1,hydraulic hose,2026-08-28,planned,"Hydraulic fitting leaking, replaced hose",0.5,77.5
+WO4147,Crimper 1,hydraulic hose,2026-09-10,breakdown,"Hydraulic fitting leaking, replaced hose",4,800
+WO4148,Crimper 1,hydraulic hose,2026-09-12,planned,"Hydraulic fitting leaking, replaced hose",1.5,357.5
+WO4149,Crimper 1,crimper pins,2026-10-12,planned,"Crimper pins sheared, replaced pins",6,650
+WO4150,Extruder 2,heater band,2026-10-13,breakdown,"Zone 2 not heating up, replaced heater band",1.5,357.5
