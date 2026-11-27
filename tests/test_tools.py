@@ -110,3 +110,9 @@ def test_bigquery_rows_give_the_same_answers(monkeypatch):
     assert (top["component"], top["count"], top["cost_usd"], top["labor_hours"]) == ("hydraulic hose", 6, 2157.5, 16.5)
     assert tools.breakdown_intervals("Crimper 1")["mean_days"] == 50.5
     assert "`demo.work_orders`" in queries[0]
+
+
+def test_instruction_keeps_tool_names_out_of_answers():
+    """A deployed test run told a planner to "use list_assets". The instruction must tell the model not to do that."""
+    source = (ROOT / "workorder_agent" / "agent.py").read_text(encoding="utf-8")
+    assert "Never mention tool or function names to the user" in source

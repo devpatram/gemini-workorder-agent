@@ -72,7 +72,7 @@ pytest -q                                    # the tools only: no cloud, no mode
 
 gcloud config set project YOUR_PROJECT_ID
 gcloud services enable aiplatform.googleapis.com
-gcloud auth application-default login        # not needed in Cloud Shell
+gcloud auth application-default login        # gives the code its own sign-in; tick every box on the consent screen
 cp .env.example workorder_agent/.env
 sed -i "s/your-project-id/$(gcloud config get-value project)/" workorder_agent/.env
 python3 scripts/check_model.py               # finds a Gemini model that answers and saves it to .env
@@ -107,6 +107,10 @@ rows (real dates and floats) and checks the answers match the CSV.
 ADK packages the `workorder_agent` folder, including its `requirements.txt` and `.env`:
 
 ```bash
+# One-time setup: the deploy command needs ADK's Google Cloud extras and Cloud Build
+pip install "google-adk[gcp]"
+gcloud services enable aiplatform.googleapis.com cloudbuild.googleapis.com
+
 # Agent Runtime (formerly Agent Engine): managed hosting and sessions
 adk deploy agent_engine --project=YOUR_PROJECT_ID --region=us-central1 \
     --display_name="Work-order assistant" workorder_agent
@@ -115,9 +119,16 @@ adk deploy agent_engine --project=YOUR_PROJECT_ID --region=us-central1 \
 adk deploy cloud_run --project=YOUR_PROJECT_ID --region=us-central1 --with_ui workorder_agent
 ```
 
+Without the extras, `adk deploy agent_engine` stops with `No module named 'agentplatform'`.
+
 Flags change between ADK releases, so check `adk deploy agent_engine --help` first. Deploy with `DATA_SOURCE=csv` unless
 the service account the agent runs as can read the BigQuery table. Give that account read access to that one table and
 nothing more. Delete what you deploy when you are done, and check the bill the next day.
+
+Checked on Nov 25, 2026 with ADK 2.15.1: deployed to Agent Runtime in `us-central1` and asked the questions in the console
+Playground. The Crimper 1 answer matched the local run and an unknown asset came back as not found. The deployment was
+deleted the same night. With no `--service_account` flag the agent runs as a Google default service account, so pass
+your own least-privilege account for anything beyond a test.
 
 ## Tests
 
@@ -125,7 +136,7 @@ nothing more. Delete what you deploy when you are done, and check the bill the n
 pytest -q
 ```
 
-Ten tests run in GitHub Actions on Python 3.11 and 3.12, with no Google Cloud account:
+Eleven tests run in GitHub Actions on Python 3.11 and 3.12, with no Google Cloud account:
 
 - The sample history: 50 orders, 6 assets.
 - Matching: exact names, case, partial names, `not_found` for an unknown asset, `ambiguous` when a partial name matches
@@ -133,6 +144,8 @@ Ten tests run in GitHub Actions on Python 3.11 and 3.12, with no Google Cloud ac
 - Arithmetic: the hydraulic-hose totals for Crimper 1 and the breakdown intervals.
 - BigQuery-typed rows give the same answers as the CSV.
 - Every tool has a docstring with a `Returns:` section, because that text is what the model reads.
+- The instruction tells the model to keep tool names out of its answers. A deployed test run replied "use `list_assets`"
+  to a planner, which is how this was found.
 
 The agent itself (Gemini's choices and wording) is checked by asking the example questions above. A next step is an
 ADK evaluation set (`adk eval`) built from those questions.
